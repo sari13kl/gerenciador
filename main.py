@@ -1,14 +1,12 @@
 from fastapi import FastAPI
-from passlib.context import CryptContext
-from dotenv import load_dotenv
-import os
+from fastapi.security import OAuth2PasswordBearer
+from auth_routes import auth_router
+from order_routes import order_router
 
-load_dotenv()
-SECERET_KEY =os.getenv("SECRET_KEY")
+
 
 app = FastAPI()
 
-bcrypt_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 from auth_routes import auth_router
 from order_routes import order_router
