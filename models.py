@@ -46,6 +46,9 @@ class Pedido(Base):
         self.usuario = usuario
         self.preco = preco
         self.status = status
+        
+    def calcular_preco(self):
+        pass
 
 #ItensPedido
 class ItemPedido(Base):
@@ -58,7 +61,7 @@ class ItemPedido(Base):
     preco_unitario = Column("preco_unitario", Float)
     pedido = Column("pedido", ForeignKey("pedidos.id"))
     
-    def __init__(self, quantidade, sabor, tamnho, preco_unitario, pedido):
+    def __init__(self, quantidade, sabor, tamanho, preco_unitario, pedido):
         self.quantidade = quantidade
         self.sabor = sabor
         self.tamanho = tamanho
