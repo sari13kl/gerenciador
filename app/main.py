@@ -1,15 +1,12 @@
 from fastapi import FastAPI
 from fastapi.security import OAuth2PasswordBearer
-from auth_routes import auth_router
-from order_routes import order_router
+from modules.auth_routes import auth_router
+from modules.order_routes import order_router
 
 
 
 app = FastAPI()
 
-
-from auth_routes import auth_router
-from order_routes import order_router
 
 app.include_router(auth_router)
 app.include_router(order_router)

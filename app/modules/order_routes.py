@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
-from schemas import PedidoSchema, ItemPedidoSchema, ResponsePedidoSchema
-from dependencies import pegar_sessao, verificar_token
+from modules.schemas import PedidoSchema, ItemPedidoSchema, ResponsePedidoSchema
+from shared.dependencies import pegar_sessao, verificar_token
 from sqlalchemy.orm import sessionmaker
-from models import Pedido, User, ItemPedido
+from core.models import Pedido, User, ItemPedido
 from typing import List
 
 order_router = APIRouter(prefix="/pedidos", tags=["[pedidos]"], dependencies=[Depends(verificar_token)])

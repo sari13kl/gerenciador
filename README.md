@@ -17,14 +17,16 @@
 - Virtual Environment (venv)
 
 ## Estrutura
-project/
+app/
 ├── main.py
-├── routes/
+├── modules/
 │ └── auth_routes.py
-├── database/
-│ └── connection.py
-├── models/
-├── services/
+│ └── order_routes.py
+├── core/
+│ └── models.py
+│ └── security.py
+├── shared/
+│ └── dependencies.py
 └── README.md
 
 > A estrutura do projeto irá evoluir conforme novos conceitos forem aprendidos.
